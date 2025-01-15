@@ -41,7 +41,7 @@
 
 如果你之前使用的是config.ini，请重新配置JavSP，或者通过[这个脚本](./tools/config_migration.py)来将其迁移到最新的config.yml。
 
-## [安装并运行JavSP](https://github.com/Yuukiy/JavSP/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP)
+## [安装并运行JavSP]([https://github.com/Yuukiy/JavSP/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP](https://github.com/htyxyt/JavSP-NotRename/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP%E2%80%90NotRename))
 
 ## 使用
 
