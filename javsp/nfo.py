@@ -45,11 +45,11 @@ def write_nfo(info: MovieInfo, nfo_file):
     # fanart通常也是通过给fanart图片命名来匹配
     nfo.append(E.mpaa('NC-17'))     # 分级
 
-    # 将DVD ID和CID写入到uniqueid字段
+    # 将DVD ID和CID写入到num和cid字段
     if info.dvdid:
-        nfo.append(E.uniqueid(info.dvdid, type='num', default='true'))
+        nfo.append(E.num(info.dvdid))
     if info.cid:
-        nfo.append(E.uniqueid(info.cid, type='cid'))
+        nfo.append(E.cid(info.cid))
 
     # 选择要写入的genre数据源字段：将[]作为后备结果，以确保genre结果为None时后续不会抛出异常
     for genre_item in (info.genre_norm, info.genre, []):
