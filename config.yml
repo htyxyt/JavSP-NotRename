@@ -64,6 +64,12 @@ crawler:
   normalize_actress_name: true
 
 ################################
+# 配置是否恢复原始文件名
+file:
+  # 是否启用恢复原始文件名功能：false-按下方设置重命名，不恢复原始文件名；true-处理完文件后，再把原始文件名恢复
+  enable_restore: false
+
+################################
 # 配置整理时的命名规则
 # path_pattern, nfo_title_pattern和name_pattern中可以使用变量来引用影片的数据，支持的变量列表见下面的地址:
 # https://github.com/Yuukiy/JavSP/wiki/NamingRule-%7C-%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99
@@ -143,7 +149,7 @@ summarizer:
 
   extra_fanarts:
     # 是否下载剧照？
-    enabled: true
+    enabled: false
     # 间隔的两次封面爬取请求之间应该间隔多久
     scrap_interval: PT1.5S
 
@@ -193,6 +199,6 @@ other:
   # 是否在stdin/stdout进行交互
   interactive: true
   # 是否允许检查更新。如果允许，在有新版本时会显示提示信息和新版功能
-  check_update: true
+  check_update: false
   # 是否允许检查到新版本时自动下载
   auto_update: false
