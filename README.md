@@ -16,7 +16,7 @@
 - 禁用了 **自动检测更新** 功能。
 - 禁用了从源代码运行时对 **Git** 的依赖。
 
-## [安装并运行JavSP](https://github.com/htyxyt/JavSP-NotRename/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP%E2%80%90NotRename)
+# [安装并运行JavSP-NotRename的方式见wiki](https://github.com/htyxyt/JavSP-NotRename/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP%E2%80%90NotRename)
 
 ![JavSP](./image/JavSP.svg)
 
