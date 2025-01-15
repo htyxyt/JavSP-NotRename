@@ -64,7 +64,7 @@ crawler:
   normalize_actress_name: true
 
 ################################
-# 配置是否恢复原始文件名
+# 配置是否在整理后恢复原始文件名
 file:
   # 是否启用恢复原始文件名功能：false-按下方设置重命名，不恢复原始文件名；true-处理完文件后，再把原始文件名恢复
   enable_restore: false
