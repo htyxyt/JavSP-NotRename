@@ -11,6 +11,7 @@ import requests
 import threading
 from typing import Dict, List
 
+
 sys.stdout.reconfigure(encoding='utf-8')
 
 import colorama
@@ -47,6 +48,8 @@ from javsp.web.translate import translate_movie_info
 
 from javsp.config import Cfg, CrawlerID
 from javsp.prompt import prompt
+
+from javsp.restore import record_file_metadata, restore_original_filenames
 
 actressAliasMap = {}
 
@@ -423,6 +426,8 @@ def process_poster(movie: Movie):
 
 def RunNormalMode(all_movies):
     """普通整理模式"""
+    file_metadata = {}  # 用于存储文件元数据
+    
     def check_step(result, msg='步骤错误'):
         """检查一个整理步骤的结果，并负责更新tqdm的进度"""
         if result:
@@ -444,6 +449,12 @@ def RunNormalMode(all_movies):
             filenames = [os.path.split(i)[1] for i in movie.files]
             logger.info('正在整理: ' + ', '.join(filenames))
             inner_bar = tqdm(total=total_step, desc='步骤', ascii=True, leave=False)
+            
+            # 仅在 enable_restore=true 时记录文件元数据
+            if Cfg().file.enable_restore:
+                for file_path in movie.files:
+                    record_file_metadata(file_path, movie.save_dir, file_metadata)
+            
             # 依次执行各个步骤
             inner_bar.set_description(f'启动并发任务')
             all_info = parallel_crawler(movie, inner_bar)
@@ -522,6 +533,11 @@ def RunNormalMode(all_movies):
 
             if movie != all_movies[-1] and Cfg().crawler.sleep_after_scraping > Duration(0):
                 time.sleep(Cfg().crawler.sleep_after_scraping.total_seconds())
+                
+            # 在整理完成后恢复文件名
+            if Cfg().file.enable_restore:
+                restore_original_filenames(movie, file_metadata)
+                    
             return_movies.append(movie)
         # except Exception as e:
         #     logger.debug(e, exc_info=True)
