@@ -227,6 +227,9 @@ def get_config_source():
     sources.append(CLArgSource(prefix='o'))
     return sources
 
+class FileConfig(BaseConfig):
+    enable_restore: bool = False  # 默认不启用恢复文件名功能
+
 class Cfg(BaseConfig):
     scanner: Scanner
     network: Network
@@ -234,4 +237,5 @@ class Cfg(BaseConfig):
     summarizer: Summarizer
     translator: Translator
     other: Other
+    file: FileConfig
     CONFIG_SOURCES=get_config_source()
