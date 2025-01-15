@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "javsp"
-version = "0.0.0"
+version = "1.8.0"
 description = "汇总多站点数据的AV元数据刮削器"
 authors = ["Yuukiy <76897913+Yuukiy@users.noreply.github.com>"]
 license = "GPL-3.0-only"
 readme = "README.md"
 
 [tool.poetry-dynamic-versioning]
-enable = true
+enable = false
 vcs = "git"
 format = "v{base}.{distance}"
 
