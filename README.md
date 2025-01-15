@@ -1,3 +1,22 @@
+# JavSP-NotRename 修改内容
+### 1. 增加可以保持原始文件名不变的选项
+**修改`config.yml`**、 **`config.py`**、**`__main__.py`** ，**新增 `restore.py`**
+
+**新增选项 `config.yml -> file -> enable_restore`**，控制文件名的处理方式。
+
+- **`false`**：按程序设置的方式重命名文件，**不恢复原始文件名**。
+
+- **`true`**：处理完文件后，**恢复原始文件名**。
+
+### 2. 调整nfo格式以适配Jvedio
+**修改 `nfo.py`**
+- 调整了 `num` 和 `cid` 字段的写入格式，以适配 [Jvedio](https://github.com/hitchao/Jvedio)。
+
+### 3. 禁用功能
+- 禁用了 **自动检测更新** 功能。
+- 禁用了从源代码运行时对 **Git** 的依赖。
+
+
 ![JavSP](./image/JavSP.svg)
 
 # Jav Scraper Package
@@ -41,7 +60,7 @@
 
 如果你之前使用的是config.ini，请重新配置JavSP，或者通过[这个脚本](./tools/config_migration.py)来将其迁移到最新的config.yml。
 
-## [安装并运行JavSP]([https://github.com/Yuukiy/JavSP/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP](https://github.com/htyxyt/JavSP-NotRename/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP%E2%80%90NotRename))
+## [安装并运行JavSP](https://github.com/htyxyt/JavSP-NotRename/wiki/%E5%AE%89%E8%A3%85%E5%B9%B6%E8%BF%90%E8%A1%8CJavSP%E2%80%90NotRename)
 
 ## 使用
 
